@@ -17,15 +17,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef STRING_H
-#define STRING_H
+#ifndef FRAMEBUFFER_H
+#define FRAMEBUFFER_H
 
-#include <stdint.h>
-#include <stddef.h>
 
-void *memcpy(void *dest, const void *src, size_t n);
-void *memset(void *s, int c, size_t n);
-void *memmove(void *dest, const void *src, size_t n);
-int memcmp(const void *s1, const void *s2, size_t n);
+
+int lyst_putc
 
 #endif
