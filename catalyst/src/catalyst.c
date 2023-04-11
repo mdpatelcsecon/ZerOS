@@ -35,7 +35,7 @@ static volatile struct limine_framebuffer_request framebuffer_request =
 // The following will be our kernel's entry point.
 // If renaming _start() to something else, make sure to change the
 // linker script accordingly.
-void _start(void)
+void lyst_main(void)
 {
 	// Ensure we got a framebuffer.
 	if (framebuffer_request.response == NULL
