@@ -1,6 +1,8 @@
 # Aster
 ## A Hobby Operating System
 
+![Aster logo](admin/@ster.png)
+
 Initial Specifications
 -----------------------
 - Target Platform: x86-64 PCs
