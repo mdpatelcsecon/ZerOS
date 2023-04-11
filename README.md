@@ -22,6 +22,8 @@ but also provides a context switching API to allow for finer control over CPU ti
 - Userspace Exceptions (USX): an interrupt-like mechanism for processes
 - A separate and well designed \<device\>ctl syscall for each type of device that is supported 
 including virtual ones like the terminal
+- A low level shim library for making syscalls from C so that the kernel syscall interface can change over time without breaking
+userspace
 
 
 Build Instructions
