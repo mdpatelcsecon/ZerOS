@@ -1,9 +1,9 @@
-0.0.2 "Sanders" (In Progress)
+0.0.1 "Sanders" (In Progress)
 Namesake: Jerry Sanders: Cofounder of Advanced Micro Devices Inc.
 
 - Developing basic infrastructure including a kernel console and serial port for logging and an assembly routine to dump core
 
-v0.0.1 "Moore"
+v0.0.0 "Moore"
 Namesake: Gordon Moore: Cofounder of Intel Corporation and creater of Moore's law
 
 - Set up the initial project structure starting from the Limine Bare Bones tutorial and repository
