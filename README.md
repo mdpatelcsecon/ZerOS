@@ -1,4 +1,4 @@
-# AsterOS
+# Aster
 ## A Hobby Operating System
 
 Initial Specifications
