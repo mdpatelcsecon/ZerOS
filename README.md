@@ -1,4 +1,4 @@
-# Aster v0.0.1 "Moore"
+# Aster v0.0.0 "Moore"
 ## A Hobby Operating System
 
 Initial Specifications
@@ -9,20 +9,15 @@ Initial Specifications
 - Assembler: NASM
 - Bootloader: Limine
 - Kernel Name: Catalyst
-- Kernel Architecture: Hybrid Kernel (Microkernel wherever possible)
+- Kernel Architecture: Hybrid Monolithic-Exokernel
 
-Design Ideas
--------------
-- Everything is an agent (lightweight process like entity)
-  - Exactly one thread of execution
-  - It's own virtual address space
-  - No need for thread local storage since each agent only has a single thread
-  - Can write corestate to disk and load it at any time via syscalls
-- In-kernel interagent bus system for fast IPC 
-  - backed by read-only shared memory
-- Drivers and kernel subsystems can create virtual agents through which they can communicate with userspace
-  - No need for ioctl or DeviceIOControl type syscall
-- Userspace Exceptions (USX): an interrupt-like mechanism for agents
+Design Concepts
+----------------
+- Kernel with low level but specific device agnostic APIs
+- Lightweight and configurable processes
+- Processes can manipulate their virtual address space via syscalls
+- Simple filesystem (open, close, read, write) with no special files
+- Userspace Exceptions (USX): an interrupt-like mechanism for processes
 
 
 Build Instructions
