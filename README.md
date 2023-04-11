@@ -1,4 +1,4 @@
-# Aster v0.0.1 (Moore)
+# Aster v0.0.1 "Moore"
 ## A Hobby Operating System
 
 Initial Specifications
