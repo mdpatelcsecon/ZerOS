@@ -1,8 +1,6 @@
 # Aster
 ## A Hobby Operating System
 
-![Aster logo](admin/@ster.png)
-
 Initial Specifications
 -----------------------
 - Target Platform: x86-64 PCs
@@ -35,3 +33,5 @@ Build Instructions
 
 - `make clean` can sort of be used to delete all build artifacts
 - `make test` can be used to test a build in QEMU if it is installed
+
+![Aster logo](admin/@ster.png)
