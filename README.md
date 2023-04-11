@@ -9,18 +9,18 @@ Initial Specifications
 - Assembler: NASM
 - Bootloader: Limine
 - Kernel Name: Catalyst
-- Kernel Architecture: Hybrid Monolithic-Exokernel
+- Kernel Architecture: Monolithic
 
 Design Concepts
 ----------------
-- Kernel with low level but specific device agnostic APIs
+- Kernel APIs are low level but agnostic to specific hardware devices
 - Lightweight and configurable processes
 - Processes can manipulate their virtual address space via syscalls
 - The kernel uses nonweighted fair scheduling to make it look like each thread is its own virtual CPU
 but also provides a context switching API to allow for finer control over CPU time in userspace
 - Simple filesystem (open, close, read, write) with no special files and each partition is treated as a separate device
 - Userspace Exceptions (USX): an interrupt-like mechanism for processes
-- A separate and well designed \<device\>ctl syscall for each type of device that is supported 
+- A separate and well designed \<device-type\>ctl syscall for each type of device that is supported 
 including virtual ones like the terminal
 - A low level shim library for making syscalls from C so that the kernel syscall interface can change over time without breaking
 userspace
