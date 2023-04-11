@@ -79,6 +79,7 @@ distclean: clean
 	rm -rf limine ovmf
 	$(MAKE) -C catalyst distclean
 
+.PHONY: test
 test:
 	make all
 	qemu-system-x86_64 -cdrom $(IMAGE_NAME).iso
