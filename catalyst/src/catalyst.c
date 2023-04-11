@@ -20,12 +20,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdint.h>
 #include <stddef.h>
 #include "include/limine.h"
+#include "include/framebuffer.h"
 #include "../arch/common/include/utility.h"
 
 // The Limine requests can be placed anywhere, but it is important that
 // the compiler does not optimise them away, so, usually, they should
 // be made volatile or equivalent.
-
 static volatile struct limine_framebuffer_request framebuffer_request = 
 {
 	.id = LIMINE_FRAMEBUFFER_REQUEST,
