@@ -6,6 +6,7 @@ Initial Specifications
 - Target Platform: x86-64 PCs
 - Executable Type: ELF
 - Toolchain: x86_64-elf-gcc
+- Assembler: NASM
 - Bootloader: Limine
 - Kernel Name: Catalyst
 - Kernel Architecture: Hybrid Kernel (Microkernel wherever possible)
