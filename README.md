@@ -16,8 +16,12 @@ Design Concepts
 - Kernel with low level but specific device agnostic APIs
 - Lightweight and configurable processes
 - Processes can manipulate their virtual address space via syscalls
-- Simple filesystem (open, close, read, write) with no special files
+- The kernel uses nonweighted fair scheduling to make it look like each thread is its own virtual CPU
+but also provides a context switching API to allow for finer control over CPU time in userspace
+- Simple filesystem (open, close, read, write) with no special files and each partition is treated as a separate device
 - Userspace Exceptions (USX): an interrupt-like mechanism for processes
+- A separate and well designed \<device\>ctl syscall for each type of device that is supported 
+including virtual ones like the terminal
 
 
 Build Instructions
