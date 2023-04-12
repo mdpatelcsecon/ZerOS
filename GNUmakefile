@@ -71,7 +71,7 @@ $(IMAGE_NAME).hdd: limine catalyst
 
 .PHONY: clean
 clean:
-	rm -rf iso_root $(IMAGE_NAME).iso $(IMAGE_NAME).hdd
+	rm -rf iso_root $(IMAGE_NAME).iso $(IMAGE_NAME).hdd logs/catalyst_db.log logs/catalyst_com.log
 	$(MAKE) -C catalyst clean
 
 .PHONY: distclean
@@ -87,4 +87,4 @@ test:
 .PHONY: test_log
 test_log:
 	make all
-	qemu-system-x86_64 -cdrom $(IMAGE_NAME).iso -no-reboot -debugcon file:db.txt -serial file:catalyst.log
+	qemu-system-x86_64 -cdrom $(IMAGE_NAME).iso -no-reboot -debugcon file:logs/catalyst_db.log -serial file:logs/catalyst_com.log
