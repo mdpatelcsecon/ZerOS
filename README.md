@@ -8,8 +8,17 @@ Initial Specifications
 - Toolchain: x86_64-elf-gcc
 - Assembler: NASM
 - Bootloader: Limine
+
+Components
+-----------
 - Kernel Name: Catalyst
-- Kernel Architecture: Monolithic
+  - Monolithic kernel with low-level though still specific device and register agnostic API
+- System Library Name: Valence
+  - Thin wrapper library so that kernel syscalls can change without breaking userspace
+- Init System: Entanglement
+  - Single high performance program initially in assembly with raw syscalls but eventually in C using Valence
+- Shell: Eigen
+  - Extremely easy to use using full length words such that anyone who can read English can easily use it
 
 Design Concepts
 ----------------
