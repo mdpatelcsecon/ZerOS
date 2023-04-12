@@ -12,9 +12,10 @@ Initial Specifications
 Components
 -----------
 - Kernel: Catalyst
-  - Monolithic kernel with low-level though still specific device and register agnostic API
+  - Monolithic kernel 
+  - Exokernel inspired low level syscall interface though still agnostic to exact devices
 - System Library: Valence
-  - Thin wrapper library so that kernel syscalls can change without breaking userspace
+  - Thin wrapper library used so that kernel syscalls can change without breaking userspace
   - C and all other higher level language implementations must develop their own standard libraries
 - Init System: Entanglement
   - Single high performance program initially in assembly with raw syscalls but eventually in C using Valence
