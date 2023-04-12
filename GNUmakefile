@@ -82,4 +82,4 @@ distclean: clean
 .PHONY: test
 test:
 	make all
-	qemu-system-x86_64 -cdrom $(IMAGE_NAME).iso
+	qemu-system-x86_64 -cdrom $(IMAGE_NAME).iso -no-reboot -debugcon file:log.txt

@@ -39,6 +39,7 @@ $(eval $(call DEFAULT_VAR,LDFLAGS,))
 override CFLAGS += \
     -Wall \
     -Wextra \
+    -pedantic \
     -std=gnu17 \
     -ffreestanding \
     -fno-stack-protector \
@@ -54,7 +55,10 @@ override CFLAGS += \
     -mno-sse \
     -mno-sse2 \
     -mno-red-zone \
-    -mcmodel=kernel
+    -mcmodel=kernel \
+    -Isrc/include \
+    -Iarch/common/include \
+    -Iarch/x86_64/src/include
 
 # Internal C preprocessor flags that should not be changed by the user.
 override CPPFLAGS := \

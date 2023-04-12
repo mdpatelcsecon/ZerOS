@@ -19,9 +19,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <stdint.h>
 #include <stddef.h>
-#include "include/limine.h"
-#include "include/framebuffer.h"
-#include "../arch/common/include/utility.h"
+#include "limine.h"
+#include "utility.h"
+#include "serial.h"
 
 // The Limine requests can be placed anywhere, but it is important that
 // the compiler does not optimise them away, so, usually, they should
@@ -37,10 +37,15 @@ static volatile struct limine_framebuffer_request framebuffer_request =
 // linker script accordingly.
 void lyst_main(void)
 {
+	//initialize COM1
+	if (init_serial()) {
+		hcf();
+	}
+	serial_puts("Hello, Catalyst kernel!!!");
+
 	// Ensure we got a framebuffer.
 	if (framebuffer_request.response == NULL
-		|| framebuffer_request.response->framebuffer_count < 1)
-	{
+		|| framebuffer_request.response->framebuffer_count < 1) {
 		hcf();
 	}
 
@@ -52,6 +57,7 @@ void lyst_main(void)
 		uint32_t *fb_ptr = framebuffer->address;
 		fb_ptr[i * (framebuffer->pitch / 4) + i] = 0x00ffffff;
 	}
+	
 	// We're done, just hang...
 	hcf();
 }
