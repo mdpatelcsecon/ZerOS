@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stddef.h>
 #include "limine.h"
 #include "utility.h"
-#include "serial.h"
+#include "debug.h"
 
 // The Limine requests can be placed anywhere, but it is important that
 // the compiler does not optimise them away, so, usually, they should
@@ -41,13 +41,15 @@ void lyst_main(void)
 	if (init_serial()) {
 		hcf();
 	}
-	serial_puts("Hello, Catalyst kernel!!!");
+	log_puts("Starting Catalyst Kernel\r\n");
 
 	// Ensure we got a framebuffer.
 	if (framebuffer_request.response == NULL
 		|| framebuffer_request.response->framebuffer_count < 1) {
 		hcf();
 	}
+
+	log_puts("Received framebuffer from Limine\r\n");
 
 	// Fetch the first framebuffer.
 	struct limine_framebuffer *framebuffer = framebuffer_request.response->framebuffers[0];
@@ -59,5 +61,6 @@ void lyst_main(void)
 	}
 	
 	// We're done, just hang...
+	log_puts("Halting...\r\n");
 	hcf();
 }
