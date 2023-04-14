@@ -47,7 +47,7 @@ void catalyst_main(void)
 	
 	char temp[66];
 	for (uint64_t i = 0; i < 64; ++i) {
-		u64_to_bin_str(1 << i, temp);
+		u64_to_bin_str(1ull << i, temp);
 		log_puts("Printing converted number:    ");
 		log_puts(temp);
 		log_puts("\r\n");
