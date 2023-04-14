@@ -1,5 +1,5 @@
 /*
-Aster
+Catalyst
 
 Copyright (C) 2023 Mohit D. Patel
 
@@ -17,9 +17,16 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef UTILITY_H
-#define UTILITY_H
+#ifndef CPU_H
+#define CPU_H
 
-extern void hcf();
+#include <stdint.h>
+
+extern volatile uint64_t regs[15];
+extern volatile uint64_t rip_val;
+
+extern void hcf(void);
+extern void store_regs(void);
+extern void store_rip(void);
 
 #endif

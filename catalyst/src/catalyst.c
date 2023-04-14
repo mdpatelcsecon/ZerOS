@@ -20,8 +20,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdint.h>
 #include <stddef.h>
 #include "limine.h"
-#include "utility.h"
+
+#include "cpu.h"
 #include "debug.h"
+#include "type_conv.h"
 
 // The Limine requests can be placed anywhere, but it is important that
 // the compiler does not optimise them away, so, usually, they should
@@ -35,14 +37,22 @@ static volatile struct limine_framebuffer_request framebuffer_request =
 // The following will be our kernel's entry point.
 // If renaming _start() to something else, make sure to change the
 // linker script accordingly.
-void lyst_main(void)
+void catalyst_main(void)
 {
 	//initialize COM1
 	if (init_serial()) {
 		hcf();
 	}
 	log_puts("Starting Catalyst Kernel\r\n");
-
+	
+	char temp[66];
+	for (uint64_t i = 0; i < 64; ++i) {
+		u64_to_bin_str(1 << i, temp);
+		log_puts("Printing converted number:    ");
+		log_puts(temp);
+		log_puts("\r\n");
+	}
+	
 	// Ensure we got a framebuffer.
 	if (framebuffer_request.response == NULL
 		|| framebuffer_request.response->framebuffer_count < 1) {

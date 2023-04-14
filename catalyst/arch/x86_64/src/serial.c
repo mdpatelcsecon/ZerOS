@@ -1,5 +1,5 @@
-#include "include/serial.h"
-#include "../arch/x86_64/src/include/isa.h"
+#include "serial.h"
+#include "isa.h"
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -7,7 +7,7 @@
 
 #define PORT 0x3f8          // COM1
 
-int init_serial()
+int init_serial(void)
 {
 	outb(PORT + 1, 0x00);    // Disable all interrupts
 	outb(PORT + 3, 0x80);    // Enable DLAB (set baud rate divisor)
@@ -30,7 +30,7 @@ int init_serial()
 	return 0;
 }
 
-int is_transmit_empty() 
+int is_transmit_empty(void)
 {
 	return inb(PORT + 5) & 0x20;
 }

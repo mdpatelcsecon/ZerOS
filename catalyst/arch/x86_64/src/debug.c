@@ -1,8 +1,4 @@
-#ifndef DEBUG_H
-#define DEBUG_H
-
-#include "isa.h"
-#include "serial.h"
+#include "debug.h"
 
 void db_putc(char c)
 {
@@ -30,5 +26,3 @@ void log_puts(const char *str)
 		++str;
 	}
 }
-
-#endif

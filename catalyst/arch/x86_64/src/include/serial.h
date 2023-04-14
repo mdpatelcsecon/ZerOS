@@ -5,7 +5,7 @@
 #include <stdint.h>
 
 
-int init_serial();
+int init_serial(void);
 char serial_putc(char c);
 size_t serial_puts(const char *str);
 
