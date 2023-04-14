@@ -46,12 +46,18 @@ void catalyst_main(void)
 	log_puts("Starting Catalyst Kernel\r\n");
 	
 	char temp[66];
-	for (uint64_t i = 0; i < 64; ++i) {
-		u64_to_bin_str(1ull << i, temp);
-		log_puts("Printing converted number:    ");
+	store_regs();
+	for (uint64_t i = 0; i < 15; ++i) {
+		u64_to_bin_str(regs[i], temp);
+		log_puts("register = ");
 		log_puts(temp);
 		log_puts("\r\n");
 	}
+	store_rip();
+	u64_to_bin_str(rip_val, temp);
+	log_puts("instruction pointer = ");
+	log_puts(temp);
+	log_puts("\r\n");
 	
 	// Ensure we got a framebuffer.
 	if (framebuffer_request.response == NULL

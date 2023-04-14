@@ -19,17 +19,13 @@ int u64_to_bin_str(const uint64_t n, char str[66])
 	if (str == NULL)
 		return -1;
 	//convert
-	log_puts("Printing from u64_to_bin_str: ");
 	for (uint64_t i = 0ull; i < 64ull; ++i) {
 		if ((n & (1ull << i))) {
-			log_puts("1");
 			str[i] = '1';
 		} else {
-			log_puts("0");
 			str[i] = '0';
 		}
 	}
-	log_puts("b\r\n");
 	//Put down the suffix and terminating null character
 	memcpy(&str[64], "b", 2);
 	//return success

@@ -18,7 +18,7 @@
 section .bss
 global regs
 regs: resq 15
-global rip
+global rip_val
 rip_val: resq 1
 
 section .text
@@ -31,6 +31,7 @@ loop:
 
 global store_regs
 store_regs:
+	mov rax, 8
 	mov [regs + 0], rax
 	mov [regs + 1], rbx
 	mov [regs + 2], rcx
