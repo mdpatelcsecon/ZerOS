@@ -1,5 +1,5 @@
 /*
-Aster
+Praxis
 
 Copyright (C) 2023 Mohit D. Patel
 
@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "cpu.h"
 #include "debug.h"
+#include "string.h"
 #include "type_conv.h"
 
 // The Limine requests can be placed anywhere, but it is important that
@@ -34,9 +35,9 @@ static volatile struct limine_framebuffer_request framebuffer_request =
 	.revision = 0
 };
 
-// The following will be our kernel's entry point.
-// If renaming _start() to something else, make sure to change the
-// linker script accordingly.
+void test_reg_prints(void);
+
+//kernel entry point
 void catalyst_main(void)
 {
 	//initialize COM1
@@ -44,21 +45,7 @@ void catalyst_main(void)
 		hcf();
 	}
 	log_puts("Starting Catalyst Kernel\r\n");
-	
-	char temp[66];
-	store_regs();
-	for (uint64_t i = 0; i < 15; ++i) {
-		u64_to_bin_str(regs[i], temp);
-		log_puts("register = ");
-		log_puts(temp);
-		log_puts("\r\n");
-	}
-	store_rip();
-	u64_to_bin_str(rip_val, temp);
-	log_puts("instruction pointer = ");
-	log_puts(temp);
-	log_puts("\r\n");
-	
+
 	// Ensure we got a framebuffer.
 	if (framebuffer_request.response == NULL
 		|| framebuffer_request.response->framebuffer_count < 1) {
@@ -75,7 +62,7 @@ void catalyst_main(void)
 		uint32_t *fb_ptr = framebuffer->address;
 		fb_ptr[i * (framebuffer->pitch / 4) + i] = 0x00ffffff;
 	}
-	
+halt:
 	// We're done, just hang...
 	log_puts("Halting...\r\n");
 	hcf();

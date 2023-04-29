@@ -20,10 +20,10 @@ int u64_to_bin_str(const uint64_t n, char str[66])
 		return -1;
 	//convert
 	for (uint64_t i = 0ull; i < 64ull; ++i) {
-		if ((n & (1ull << i))) {
-			str[i] = '1';
+		if ((n & (1ull << i)) != 0) {
+			str[63 - i] = '1';
 		} else {
-			str[i] = '0';
+			str[63 - i] = '0';
 		}
 	}
 	//Put down the suffix and terminating null character

@@ -1,2 +1,6 @@
-
+.gitignore
 aster.iso
+*.d
+*.o
+*.elf
+*.bin

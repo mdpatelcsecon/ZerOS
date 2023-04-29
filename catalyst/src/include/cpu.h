@@ -1,5 +1,5 @@
 /*
-Catalyst
+Praxis
 
 Copyright (C) 2023 Mohit D. Patel
 
@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <stdint.h>
 
-extern volatile uint64_t regs[15];
+extern volatile uint64_t regs[16];
 extern volatile uint64_t rip_val;
 
 extern void hcf(void);
