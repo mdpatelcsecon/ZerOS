@@ -32,5 +32,24 @@ int u64_to_bin_str(const uint64_t n, char str[66])
 	return 0;
 }
 
-int u64_to_hex_str(const uint64_t *const n, char str[8]);
-int u64_to_dec_str(const uint64_t *const n, char str[8]);
+static const char digit_array[] = "0123456789ABCDEF";
+
+uint64_t pow(uint64_t base, uint64_t exponent)
+{
+	uint64_t result = 1;
+	while (exponent != 0) {
+		result *= base;
+		--exponent;
+	}
+	return result;
+}
+
+int u64_to_hex_str(const uint64_t n, char str[8])
+{
+	if (str == NULL)
+		return -1;
+	while (n) {
+		
+	}
+}
+int u64_to_dec_str(const uint64_t n, char str[8]);

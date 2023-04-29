@@ -47,7 +47,13 @@ SECTIONS
     .bss : {
         *(COMMON)
         *(.bss .bss.*)
-    } :data
+    } :data =0
+
+    .scratch BLOCK(4K) : {
+        scratch_start = .;
+        . = . + 40960;
+        scratch_end = .;
+    } :data =0
 
     /* Discard .note.* and .eh_frame since they may cause issues on some hosts. */
     /DISCARD/ : {

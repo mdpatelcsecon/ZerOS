@@ -35,7 +35,7 @@ static volatile struct limine_framebuffer_request framebuffer_request =
 	.revision = 0
 };
 
-void test_reg_prints(void);
+static uint64_t errno = 0;
 
 //kernel entry point
 void catalyst_main(void)
