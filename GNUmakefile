@@ -1,7 +1,7 @@
 # Nuke built-in rules and variables.
 override MAKEFLAGS += -rR
 
-override IMAGE_NAME := aster
+override IMAGE_NAME := NewOS
 
 .PHONY: all
 all: $(IMAGE_NAME).iso
@@ -82,9 +82,9 @@ distclean: clean
 .PHONY: test
 test:
 	make all
-	qemu-system-x86_64 -cdrom $(IMAGE_NAME).iso -no-reboot -debugcon stdio
+	qemu-system-x86_64 -M q35 -m 8G -smp 8 -bios ovmf/OVMF.fd -cdrom $(IMAGE_NAME).iso -no-reboot -debugcon stdio
 
 .PHONY: test_log
 test_log:
 	make all
-	qemu-system-x86_64 -cdrom $(IMAGE_NAME).iso -no-reboot -debugcon file:logs/catalyst_db.log -serial file:logs/catalyst_com.log
+	qemu-system-x86_64 -M q35 -m 8G -smp 8 -bios ovmf/OVMF.fd -cdrom $(IMAGE_NAME).iso -no-reboot -debugcon file:logs/catalyst_db.log -serial file:logs/catalyst_com.log
