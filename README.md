@@ -1,4 +1,4 @@
-# Praxis v0.0.0 "Moore"
+# NewOS v0.0.0 "Moore"
 ## A Hobby Operating System
 
 Initial Specifications
@@ -24,10 +24,8 @@ Components (Planned)
 
 Design Concepts
 ----------------
-- Kernel APIs are low level but agnostic to specific hardware devices
+- Kernel APIs offer fine grained control while being agnostic to specific hardware devices
 - Lightweight and configurable processes
-- Processes can manipulate their virtual address space via syscalls
-- Weighted Fair Scheduling
 - Simple filesystem (open, close, read, write) with no special files and each partition is treated as a separate device
 - Userspace Exceptions (USX): an interrupt-like mechanism for processes
 - A separate and well designed syscall for each type of device and kernel subsystem that is supported 
