@@ -12,7 +12,7 @@ Initial Specifications
 Components (Planned)
 -----------
 - Kernel: Catalyst
-  - Monolithic kernel 
+  - Hybrid kernel 
   - Exokernel inspired low level syscall interface though still agnostic to exact devices
 - System Library: Valence
   - Thin wrapper library used so that kernel syscalls can change without breaking userspace
