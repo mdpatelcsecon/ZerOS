@@ -1,4 +1,4 @@
-; Praxis
+; NewOS
 ;
 ; Copyright (C) 2023 Mohit D. Patel
 ;
