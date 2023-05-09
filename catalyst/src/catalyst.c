@@ -54,14 +54,14 @@ void catalyst_main(void)
 
 	log_puts("Received framebuffer from Limine\r\n");
 
-	// Fetch the first framebuffer.
+/* 	// Fetch the first framebuffer.
 	struct limine_framebuffer *framebuffer = framebuffer_request.response->framebuffers[0];
 
 	// Note: we assume the framebuffer model is RGB with 32-bit pixels.
 	for (size_t i = 0; i < 1000; i++) {
 		uint32_t *fb_ptr = framebuffer->address;
 		fb_ptr[i * (framebuffer->pitch / 4) + i] = 0x00ffffff;
-	}
+	} */
 halt:
 	// We're done, just hang...
 	log_puts("Halting...\r\n");
