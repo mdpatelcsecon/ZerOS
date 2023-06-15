@@ -1,6 +1,8 @@
 .gitignore
-aster.iso
+*.iso
 *.d
 *.o
 *.elf
 *.bin
+./limine
+./ovmf
