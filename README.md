@@ -1,10 +1,10 @@
-# NewOS v0.0.0 "Moore"
+# ZerOS
 ## A Hobby Operating System
 
 Initial Specifications
 -----------------------
 - Target Platform: x86-64 PCs
-- Executable Type: ELF
+- Executable Type: TBD
 - Toolchain: x86_64-elf-gcc
 - Assembler: NASM
 - Bootloader: Limine
