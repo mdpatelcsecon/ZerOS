@@ -24,14 +24,18 @@ including virtual ones like the terminal
 - A stub library for interacting with the kernel so the syscall interface can change over time without breaking
 userspace
 
-Build Instructions
--------------------
-- NOTE: As of right now this project can only be built on GNU/Linux and the only OS it has been tested to build on is Fedora 38
-
-1. Build and install the GNU Binutils version 2.40 and GNU GCC Compiler version 12.2.0 both targeting x86_64-elf
-2. Add the aforementioned tools to your PATH environment variable
-3. Clone this repository
-4. Run the `make -jx` command where `x` is the number of threads you wish to use
-
-- `make clean` can be used to delete all build artifacts
-- `make test` can be used to test a build in QEMU if it is installed
+Building
+---------
+- As of right now this project can only be built on GNU/Linux
+- The following tools are required to build and test this project:
+  - GCC built from source to target x86_64-elf
+  - The GNU Binutils built from source to target x86_64-elf
+  - The Netwide Assembler (NASM)
+  - CURL
+  - qemu-system-x86_64
+- Once these tools are installed and added to the PATH environment variable you can clone this repository and run `make`
+  - `make` will build all targets other than test targets
+  - `make test` will build the UEFI target and boot it in QEMU
+  - `make clean` can be used to delete all build artifacts
+  - `make distclean` can be used to remove all supporting libraries and artifacts and force them to be reacquired and rebuilt
+  the next time you run `make`
