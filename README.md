@@ -4,8 +4,8 @@
 Initial Specifications
 -----------------------
 - Target Platform: x86-64 PCs
-- Executable Type: TBD
-- Toolchain: x86_64-elf-gcc
+- Executable Type: ELF
+- Toolchain: Clang
 - Assembler: NASM
 - Bootloader: Limine
 
@@ -28,10 +28,11 @@ Building
 ---------
 - As of right now this project can only be built on GNU/Linux
 - The following tools are required to build and test this project:
-  - GCC built from source to target x86_64-elf
-  - The GNU Binutils built from source to target x86_64-elf
+  - Clang
+  - LLD
   - The Netwide Assembler (NASM)
   - CURL
+  - xorriso
   - qemu-system-x86_64
 - Once these tools are installed and added to the PATH environment variable you can clone this repository and run `make`
   - `make` will build all targets other than test targets
