@@ -1,7 +1,7 @@
 # Nuke built-in rules and variables.
 override MAKEFLAGS += -rR
 
-override IMAGE_NAME := NewOS
+override IMAGE_NAME := ZerOS
 
 .PHONY: all
 all: $(IMAGE_NAME).iso
