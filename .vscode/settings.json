@@ -1,0 +1,6 @@
+{
+        "files.associations": {
+                "llk_api.h": "c",
+                "serial.h": "c"
+        }
+}

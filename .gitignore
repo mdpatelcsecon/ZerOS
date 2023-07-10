@@ -6,3 +6,4 @@
 *.bin
 ./limine
 ./ovmf
+./vscode

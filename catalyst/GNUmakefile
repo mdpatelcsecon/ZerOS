@@ -56,9 +56,7 @@ override CFLAGS += \
     -mno-sse2 \
     -mno-red-zone \
     -mcmodel=kernel \
-    -Isrc/include \
-    -Iarch/common/include \
-    -Iarch/x86_64/src/include
+    -DTARGET=x64_UEFI_ACPI
 
 # Internal C preprocessor flags that should not be changed by the user.
 override CPPFLAGS := \
