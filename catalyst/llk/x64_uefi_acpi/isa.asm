@@ -1,3 +1,5 @@
+bits 64
+
 global inb
 inb:
 	mov dx, di

@@ -1,7 +1,7 @@
 /*compiler and bootloader includes*/
 #include <stdint.h>
 #include <stddef.h>
-#include "limine/limine.h"
+#include "../limine/limine.h"
 
 /*architecture specific setup*/
 #include "llk/api/include/llk_api.h"

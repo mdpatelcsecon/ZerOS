@@ -1,4 +1,4 @@
-BITS 64
+bits 64
 
 section .bss
 global regs
