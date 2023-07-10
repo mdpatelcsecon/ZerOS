@@ -42,12 +42,3 @@ char serial_putc(char c)
 	outb(PORT, c);
 	return c;
 }
-
-size_t serial_puts(const char *str)
-{
-	size_t i;
-	for (i = 0; str[i] != '\0'; ++i) {
-		serial_putc(str[i]);
-	}
-	return i;
-}
